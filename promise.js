@@ -1,21 +1,27 @@
-// Creating a promise that simulates an asynchronous task
-const task = new Promise((resolve, reject) => {
-  const success = true; // Change to false to simulate failure
-
-  setTimeout(() => {
-      if (success) {
-          resolve("Task Completed Successfully!");
-      } else {
-          reject("Task Failed!");
-      }
-  }, 2000);
-});
-
-// Using .then() and .catch() to handle the resolved or rejected promise
-task
-  .then(result => {
-      console.log(result);  // Output: "Task Completed Successfully!"
-  })
-  .catch(error => {
-      console.log(error);   // Output (if failure): "Task Failed!"
+function async1 () {
+  return new Promise ((resolve,reject) => {
+    setTimeout(() => {
+      console.log("message 1");
+      resolve("success");
+    },3000);
   });
+}
+function async2 () {
+  return new Promise ((resolve,reject) => {
+    setTimeout(() => {
+      console.log("message 2");
+      resolve("success");
+    },3000);
+  });
+}
+
+console.log("Getting Message One")
+let p1 = async1();
+p1.then((res)=>{
+  console.log(res);
+  console.log("Getting Message two")
+  let p2 = async2();
+  p2.then((res)=>{
+   console.log(res);
+  })
+})
