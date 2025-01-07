@@ -23,5 +23,5 @@ p1.then((res)=>{
   let p2 = async2();
   p2.then((res)=>{
    console.log(res);
-  })
+  });
 })
