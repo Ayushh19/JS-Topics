@@ -8,8 +8,11 @@ function fetchData(callback) {
 function processData() {
   console.log("Processing data...");
 }
-// synchronous_callback
+
 fetchData(processData);
+
+
+// synchronous_callback
 function greet(name, callback) {
   console.log("Hello " + name);
   callback(); // Call the callback function
