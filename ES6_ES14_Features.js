@@ -38,8 +38,9 @@ const asyncFetchData = async () => {
 asyncFetchData();
 
 // 9. Object.entries() and Object.values()
-console.log("Object.entries:", Object.entries(person));
-console.log("Object.values:", Object.values(person));
+const perso = { name: "Ayush", age: 20 };
+console.log("Object.entries:", Object.entries(perso));
+console.log("Object.values:", Object.values(perso));
 
 // ES9 Features
 // 10. Rest/Spread for Objects
